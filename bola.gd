@@ -27,6 +27,7 @@ func _physics_process(delta):
 
 		if collider == $"../Player" or collider == $"../CPU":
 			velocidade += aceleracao
+			$"../../AudioStreamPlayer".play()
 			direcao = nova_direcao(collider)
 
 		else:
@@ -44,7 +45,6 @@ func nova_direcao(collider):
 	var dist = ball_y - pad_y
 	var nova_direcao := Vector2()
 	
-	#flip the horizontal direction
 	if direcao.x > 0:
 		nova_direcao.x = -1
 	else:

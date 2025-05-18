@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg65qk514hkh"]
+[gd_scene load_steps=15 format=3 uid="uid://dg65qk514hkh"]
 
 [ext_resource type="Texture2D" uid="uid://l27b0an7xch5" path="res://Bg.png" id="1_evvns"]
 [ext_resource type="Script" uid="uid://dx8bsq61fwqye" path="res://sprite_2d.gd" id="2_1ap6j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c2h220aual1yh" path="res://cpu.gd" id="4_8c340"]
 [ext_resource type="Script" uid="uid://bcdr2sg6rqk0x" path="res://bola.gd" id="4_qn35j"]
 [ext_resource type="Script" uid="uid://co1lmwl80j7xm" path="res://player_2.gd" id="6_45nkh"]
+[ext_resource type="AudioStream" uid="uid://u5qjss6hxafp" path="res://effects.wav" id="8_ysdx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ap6j"]
 size = Vector2(15, 120)
@@ -160,6 +161,9 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ysdx3")
 
 [connection signal="body_entered" from="Sprite2D/Esquerda" to="Sprite2D" method="_on_esquerda_body_entered"]
 [connection signal="body_entered" from="Sprite2D/Direita" to="Sprite2D" method="_on_direita_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b24ofd2b7euh0"]
+[gd_scene load_steps=18 format=3 uid="uid://b24ofd2b7euh0"]
 
 [ext_resource type="Script" uid="uid://n2w53dplmur2" path="res://node_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://bqt0y60jjmaqi" path="res://ezgif-split/frame_00_delay-0.09s.jpg" id="2_x0ka3"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://byawoiw1q2hct" path="res://ezgif-split/frame_09_delay-0.09s.jpg" id="11_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://bb284sijp8m15" path="res://ezgif-split/frame_10_delay-0.09s.jpg" id="12_ei405"]
 [ext_resource type="Script" uid="uid://cg53ch1qob502" path="res://laranja.gd" id="13_0h7mo"]
+[ext_resource type="AudioStream" uid="uid://ux60v68lpy6t" path="res://music.wav" id="14_nr8wp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x0ka3"]
 animations = [{
@@ -135,6 +136,9 @@ text = "Sair"
 
 [node name="laranja" type="Node" parent="."]
 script = ExtResource("13_0h7mo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_nr8wp")
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
